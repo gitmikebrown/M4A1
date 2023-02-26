@@ -4,9 +4,13 @@ const router = express.Router();
 const gradeController = require('../controller/gradeController');
 
 
-router.get('/', gradeController.getData );
-router.post('/', gradeController.postData);
-router.put('/', gradeController.putData);
-router.delete('/', gradeController.deleteData);
+router.route('/')
+    .get(gradeController.getData )
+    .post(gradeController.postData)
 
+router.route('/')
+    .get(gradeController.getData )
+    .patch(gradeController.postData)
+    .put(gradeController.putData)
+    .delete(gradeController.deleteData);
 module.exports = router; 
